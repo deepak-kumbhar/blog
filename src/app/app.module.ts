@@ -9,13 +9,15 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddPostComponent } from './add-post/add-post.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    AddPostComponent
+    AddPostComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     EditorModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
-      { path: 'add-post', component: AddPostComponent }
+      { path: 'add-post', component: AddPostComponent },
+      { path: 'register', component: RegisterComponent }
     ]),
   ],
   providers: [],
