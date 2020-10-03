@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div class="content">
+    <div class="container">
+        <div class="row" *ngFor="let blog of posts">
+            <div>
+                <br>
+                <h3>{{blog.title}}</h3>
+                <p [innerHTML]="blog.content"></p>
+                <em class="author"><strong>Author:</strong> {{blog.first_name}} | {{blog.email}}</em>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
