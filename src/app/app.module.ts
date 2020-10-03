@@ -12,6 +12,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { RegisterComponent } from './auth/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { HomeComponent } from './home/home.component';
+import { RegisterSuccessComponent } from './register-success/register-success.component';
 
 @NgModule({
   declarations: [
@@ -19,21 +21,24 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     HeaderComponent,
     LoginComponent,
     AddPostComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    RegisterSuccessComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-
     AppRoutingModule,
     EditorModule,
     NgxWebstorageModule.forRoot(),
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'add-post', component: AddPostComponent },
-      { path: 'register', component: RegisterComponent }
+      { path: 'register', component: RegisterComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'register-success', component: RegisterSuccessComponent }
     ]),
   ],
   providers: [],

@@ -4,6 +4,7 @@ import { LoginPayload } from './auth/login-payload';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LocalStorageService } from 'ngx-webstorage';
 import { map } from 'rxjs/operators';
+import { RegisterPayoad } from './auth/register-payload';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { map } from 'rxjs/operators';
 export class AuthService {
 
 
-  private baseUrl = "http://5ea7d7f9cb51.ngrok.io/api/";
+  private baseUrl = "http://2fd67eb9fa0d.ngrok.io/api/";
 
   constructor(private httpClient: HttpClient, private localStorageService: LocalStorageService) { }
 
@@ -21,5 +22,11 @@ export class AuthService {
       this.localStorageService.store('loginData', data);
       return true;
     }));
+  }
+
+  //register api call
+  register(registerPayload: RegisterPayoad): Observable<any> {
+    let headers: HttpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.httpClient.post(this.baseUrl + 'user/signup', registerPayload, { headers: headers });
   }
 }
