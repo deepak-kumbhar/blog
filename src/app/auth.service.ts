@@ -12,7 +12,7 @@ import { RegisterPayoad } from './auth/register-payload';
 export class AuthService {
 
   //base url to make it common.
-  private baseUrl = "http://510fff8d0163.ngrok.io/api/";
+  private baseUrl = "http://localhost:8000/api/";
 
   constructor(private httpClient: HttpClient, private localStorageService: LocalStorageService) { }
 

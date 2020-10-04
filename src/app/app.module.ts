@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { HomeComponent } from './home/home.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RegisterSuccessComponent } from './register-success/register-success.co
     AddPostComponent,
     RegisterComponent,
     HomeComponent,
-    RegisterSuccessComponent
+    RegisterSuccessComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +36,12 @@ import { RegisterSuccessComponent } from './register-success/register-success.co
     EditorModule,
     NgxWebstorageModule.forRoot(),
     RouterModule.forRoot([
+      { path: '', component: HomeComponent },
       { path: 'login', component: LoginComponent },
       { path: 'add-post', component: AddPostComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'home', component: HomeComponent },
+      { path: 'post/:id', component: PostComponent },
       { path: 'register-success', component: RegisterSuccessComponent }
     ]),
   ],
