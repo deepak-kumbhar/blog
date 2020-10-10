@@ -15,6 +15,8 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { HomeComponent } from './home/home.component';
 import { RegisterSuccessComponent } from './register-success/register-success.component';
 import { PostComponent } from './post/post.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { DraftComponent } from './draft/draft.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { PostComponent } from './post/post.component';
     RegisterComponent,
     HomeComponent,
     RegisterSuccessComponent,
-    PostComponent
+    PostComponent,
+    UpdateProfileComponent,
+    DraftComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,8 @@ import { PostComponent } from './post/post.component';
       { path: 'register', component: RegisterComponent },
       { path: 'home', component: HomeComponent },
       { path: 'post/:id', component: PostComponent },
+      { path: 'update-profile', component: UpdateProfileComponent },
+      { path: 'draft', component: DraftComponent },
       { path: 'register-success', component: RegisterSuccessComponent }
     ]),
   ],
